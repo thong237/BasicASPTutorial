@@ -1,0 +1,22 @@
+﻿@*@model BasicASPTutorial.Models.Student;*@
+@model IEnumerable<BasicASPTutorial.Models.Student>;
+@{
+    ViewData["Title"] = "หน้าแรก";
+}
+
+<h1 style="color:red;" class="text-center">ผลคะแนนสอบวิชาคอมพิวเตอร์</h1>
+@foreach (var student in Model)
+{
+    <p>รหัสนักเรียน : @student.Id</p>
+    <p>ชื่อ-นามสกุล : @student.Name</p>
+    @if (student.Score >= 50)
+    {
+        <strong class="text-success">สอบผ่าน</strong>
+    }
+    else
+    {
+        <strong class="text-danger">สอบไม่ผ่าน</strong>
+    }
+    <hr />
+}
+
